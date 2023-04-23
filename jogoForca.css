@@ -4,7 +4,7 @@
     }
     
     body {
-        background: #F7F6FF;
+        background: #FFE9F4;
         font-family: 'Plus Jakarta Sans', sans-serif;
     }
     
@@ -19,9 +19,9 @@
     }
     
     .container .titulo h1 {
-        color: #050135;
+        color: #F87F11;
         font-weight: 700;
-        font-size: 40px;
+        font-size: 35px;
     }
     
     .container .imagem {
@@ -29,46 +29,57 @@
         justify-content: center;
     }
     
-    .container .img {
+    .container #img {
         width: 250px;
         height: 250px;
         background-image: url(./imagens/img1.svg);
         background-repeat: no-repeat;
     }
     
-    /* .container .imagem img {
-        width: 250px;
-    } */
-    
     .container .palavraSecreta {
-        padding: 3em;
+        padding: 1em 1em 2.5em 1em;
         display: flex;
         justify-content: center;
+        align-items: center;
     }
-    
-    /* .container .palavra h2 {
-        font-size: 30px;
-        font-weight: 700;
-    } */
 
     .container .letras {
         width: 16px;
+        height: 25px;
         text-align: center;
-        border-bottom: 2px solid #1609B6;
-        color: #050135;
+        border-bottom: 2px solid #E71177;
+        color: #323232;
         padding: 2px;
         margin-right: 2px;
         font-weight: 500;
+        color: #323232;
+        font-weight: 600;
+        font-size: 20px;
     }
     
     .container .letrasErradas {
         display: flex;
         align-items: center;
         flex-direction: column;
-        padding: 0 5em 5em 5em;
+        margin-bottom: 30px;
+        height: 70px;
     }
     .container .letrasErradas h2 {
         font-size: 25px;
+        color: #E71177;
+    }
+
+    .container .letrasErradas h3 {
+        font-size: 20px;
+        color: #323232;
+    }
+
+    .container .letrasErradas .viewLetrasErradas {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 15px;
     }
     
     .container .buttonLetra {
@@ -79,7 +90,7 @@
     }
 
     .container .boxDigitar {
-        background-color: #050135;
+        background-color: #F87F11;
         padding: 20px;
         border-radius: 15px;
         max-width: 300px;
@@ -92,7 +103,6 @@
         color: #fff;
         font-size: 17px;
         font-weight: 500;
-        opacity: 80%;
     }
     
     .container .buttonLetra .input {
@@ -103,7 +113,7 @@
     .container .buttonLetra .input input {
         font-size: 15px;
         font-weight: 600;
-        color: #050135;
+        color: #323232;
         padding: 3px 3px 3px 10px;
         border-radius: 5px 0 0 5px;
         width: 65px;
@@ -113,7 +123,7 @@
     .container .buttonLetra .input button {
         width: 60px;
         cursor: pointer;
-        background: #1609B6;
+        background: #E71177;
         color: #fff;
         font-weight: 500;
         font-size: 13px;
@@ -122,3 +132,73 @@
         padding: 8px;
     }
     
+    @media (min-width: 600px) {
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-template-areas: 
+            "titulo titulo"
+            "imagem letrasErradas"
+            "palavraSecreta buttonLetra";
+            grid-template-rows: 100px 250px 200px;
+        
+        }
+        .container .titulo {
+            grid-area: titulo;
+        }
+
+        .imagem {
+            grid-area: imagem;
+        }
+
+        .container #img {
+            width: 350px;
+            height: 350px;
+        }
+
+        .container .palavraSecreta {
+            grid-area: palavraSecreta;
+            align-items: flex-end;
+        }
+
+        .container .letrasErradas {
+            grid-area: letrasErradas;
+            align-items: center;
+            justify-content: center;
+            height: 200px;
+        }
+
+        .buttonLetra {
+            grid-area: buttonLetra;
+        }
+
+        .container .letras {
+            width: 20px;
+            height: 30px;
+            padding: 5px;
+            margin-right: 2px;
+            color: #323232;
+            font-weight: 600;
+            font-size: 25px;
+        }
+
+        .container .boxDigitar {
+            background-color: #F87F11;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 500px;
+        }
+
+        .container .buttonLetra .input input {
+            font-size: 18px;
+            padding: 5px 5px 5px 10px;
+            width: 75px;
+        }
+        
+        .container .buttonLetra .input button {
+            width: 80px;
+            height: 35px;
+            font-size: 15px;
+            padding: 10px;
+        }
+    }
