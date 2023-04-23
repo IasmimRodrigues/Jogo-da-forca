@@ -23,7 +23,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 50px 0;
+    padding: 50px 30px;
 }
 
 .content h1 {
